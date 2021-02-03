@@ -11,7 +11,7 @@ describe ('Haiku', () => {
   });
 
   test('should check if letters are vowels', () => {
-    expect(reusableHaiku.checkVowels()).toEqual(true);
+    expect(reusableHaiku.checkVowels()).toEqual('a');
   });
   
 });
