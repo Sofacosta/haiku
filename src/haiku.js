@@ -1,55 +1,64 @@
 // Object Constructor Function
-let line1 = "bad ass string"
+// let line1 = "bad ass string"
 
 export class Haiku {
-  constructor(line1){
+  constructor(line1, line2, line3){
     this.line1 = line1;
-    // this.line2 = line2;
-    // this.line3 = line3;
+    this.line2 = line2;
+    this.line3 = line3;
   }
 
-    checkVowels() {
-      let letterArray = [];
-      const line1LettersArray = this.line1.split("");
-      // const line2Letters = this.line2.split("");
-      // const line3Letters = this.line3.split("");
-      for(let i = 0; i < line1LettersArray.length; i++){
-        if(line1LettersArray[i].includes('a') || line1LettersArray[i].includes('e') || line1LettersArray[i].includes('i') || line1LettersArray[i].includes('o') || line1LettersArray[i].includes('u')){
-          letterArray.push(line1LettersArray[i]);
-        } else {
-          letterArray.push("Else section");
-        }
+  //   checkVowels() {
+  //     let letterArray = [];
+  //     const line1LettersArray = this.line1.split("");
+  //     // const line2Letters = this.line2.split("");
+  //     // const line3Letters = this.line3.split("");
+  //     for(let i = 0; i < line1LettersArray.length; i++){
+  //       if(line1LettersArray[0][i].includes('a') || line1LettersArray[i].includes('e') || line1LettersArray[i].includes('i') || line1LettersArray[i].includes('o') || line1LettersArray[i].includes('u')){
+  //         letterArray.push(line1LettersArray[i]);
+  //       } else {
+  //         letterArray.push("Else section");
+  //       }
+  //     }
+  //     return letterArray.toString();
+  //   }
+  // }
+
+  checkVowels() {
+    let lineArray = [];
+    let letterArray = [];
+    let consonantArray = [];
+    lineArray.push(this.line1);
+    lineArray.push(this.line2);
+    lineArray.push(this.line3);
+    for(let i = 0; i < lineArray[0].length; i++){
+      if(lineArray[0][i].includes('a') || lineArray[0][i].includes('e') || lineArray[0][i].includes('i') || lineArray[0][i].includes('o') || lineArray[0][i].includes('u')){
+        letterArray.push(lineArray[0][i]);
+      } else {
+        consonantArray.push(lineArray[2][i]);
       }
-      return letterArray.toString();
     }
+      for(let i = 0; i < lineArray[1].length; i++){
+        if(lineArray[1][i].includes('a') || lineArray[1][i].includes('e') || lineArray[1][i].includes('i') || lineArray[1][i].includes('o') || lineArray[1][i].includes('u')){
+          letterArray.push(lineArray[1][i]);
+        } else {
+          consonantArray.push(lineArray[2][i]);
+        }
+    }
+    for(let i = 0; i < lineArray[2].length; i++){
+      if(lineArray[2][i].includes('a') || lineArray[2][i].includes('e') || lineArray[2][i].includes('i') || lineArray[2][i].includes('o') || lineArray[2][i].includes('u')) {
+        letterArray.push(lineArray[2][i]);
+      } else {
+        consonantArray.push(lineArray[2][i]);
+      }
+    }
+    console.log(letterArray.toString());
+    console.log(consonantArray.toString());
+    return letterArray.toString();
   }
-  
-let newHaiku = new Haiku("bad ass statement");
+}
+let newHaiku = new Haiku("Random words", "really freakin suck", "oh my gosh");
 newHaiku.checkVowels();
-  
-
-// function checkingArray(){
-//   let newArray = [];
-//   numberArray.forEach(function(number){
-//     if(newArray.length != number){
-//       newArray = [];
-//     }
-//     if(number.includes('3')){
-//       const checkedNumber = "Won't you be my neighbor?";
-//       newArray.push(checkedNumber);
-//     } else if(number.includes('2')){
-//       const checkedNumber = "Boop!";
-//       newArray.push(checkedNumber);
-//     } else if(number.includes('1')){
-//       const checkedNumber = "Beep!";
-//       newArray.push(checkedNumber); 
-//     } else {
-//       newArray.push(number);
-//     }
-//   });
-//   return newArray.join(' ')
-// };
-
 
 
 // $(document).ready(function(event) {
@@ -70,18 +79,6 @@ newHaiku.checkVowels();
 //  }); 
 
 
-// let emptyArray = [];
-// const vowels = ["a", "e", "i", "o", "u"];
-// const line1LettersArray = this.line1.split("");
-// // const line2Letters = this.line2.split("");
-// // const line3Letters = this.line3.split("");
-// for(let i = 0; i < line1LettersArray.length; i++){
-//   if(line1LettersArray[i].includes('a','i','e','o','u')){
-//     emptyArray.push(line1LettersArray[i]);
-//   } else {
-//     emptyArray.push("Else section");
-//   }
-// }
-// console.log(emptyArray);
-// return emptyArray;
-// }
+ // if(lineArray[2][i].includes('a') === false || lineArray[2][i].includes('e') === false || lineArray[2][i].includes('i') === false || lineArray[2][i].includes('o') === false|| lineArray[2][i].includes('u') === false) {
+      //   letterArray.push('x');
+      // }
