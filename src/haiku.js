@@ -35,15 +35,15 @@ export class Haiku {
       if(lineArray[0][i].includes('a') || lineArray[0][i].includes('e') || lineArray[0][i].includes('i') || lineArray[0][i].includes('o') || lineArray[0][i].includes('u')){
         letterArray.push(lineArray[0][i]);
       } else {
-        consonantArray.push(lineArray[2][i]);
+        consonantArray.push(lineArray[0][i]);
       }
     }
-      for(let i = 0; i < lineArray[1].length; i++){
-        if(lineArray[1][i].includes('a') || lineArray[1][i].includes('e') || lineArray[1][i].includes('i') || lineArray[1][i].includes('o') || lineArray[1][i].includes('u')){
-          letterArray.push(lineArray[1][i]);
-        } else {
-          consonantArray.push(lineArray[2][i]);
-        }
+    for(let i = 0; i < lineArray[1].length; i++){
+      if(lineArray[1][i].includes('a') || lineArray[1][i].includes('e') || lineArray[1][i].includes('i') || lineArray[1][i].includes('o') || lineArray[1][i].includes('u')){
+        letterArray.push(lineArray[1][i]);
+      } else {
+        consonantArray.push(lineArray[1][i]);
+      }
     }
     for(let i = 0; i < lineArray[2].length; i++){
       if(lineArray[2][i].includes('a') || lineArray[2][i].includes('e') || lineArray[2][i].includes('i') || lineArray[2][i].includes('o') || lineArray[2][i].includes('u')) {
@@ -60,6 +60,7 @@ export class Haiku {
 let newHaiku = new Haiku("Random words", "really freakin suck", "oh my gosh");
 newHaiku.checkVowels();
 
+// if consanantArray @ [i] = consanantArray @ [i] +1 || consanantArray @ [i] -1
 
 // $(document).ready(function(event) {
 //   $("form#puzzle").submit(function(event) {
